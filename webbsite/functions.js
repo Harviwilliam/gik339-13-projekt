@@ -31,4 +31,28 @@ function addCar() {
     const model = document.getElementById("car-model").value
     const licenseplate = document.getElementById("licenseplate").value
     const color = document.getElementById("car-color").value
+    const year = document.getElementById("car-model-year").value
+    const mileage = document.getElementById("miles-traveled").value
+
+    fetch('http://localhost:3000/api/cars', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+            make,
+            model,
+            licenseplate,
+            color,
+            year,
+            mileage,
+        }),
+    })
+    .then(response => {
+        if (!response.ok) {
+            throw new Error(' HTTP error! Status: ${response.status}');
+        }
+        console.log('Car added successfully');
+    })
+    .catch(error => console.error('Error', error));
 }
