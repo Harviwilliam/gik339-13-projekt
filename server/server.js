@@ -59,7 +59,7 @@ server.post("/api/cars", (req, res) => {
         return;
     }
 
-    const insertData = db.prepare("INSERT INTO cars (make, mode, licenseplate, color, year, mileage VALUES (?, ?, ?, ?, ?, ?");
+    const insertData = db.prepare("INSERT INTO cars (make, model, licenseplate, color, year, mileage) VALUES (?, ?, ?, ?, ?, ?)");
     insertData.run(make, model, licenseplate, color, year, mileage);
     insertData.finalize();
 

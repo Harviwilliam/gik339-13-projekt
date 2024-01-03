@@ -55,4 +55,4 @@ function addCar() {
         console.log('Car added successfully');
     })
     .catch(error => console.error('Error', error));
-}
+};
