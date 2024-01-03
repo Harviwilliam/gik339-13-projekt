@@ -76,12 +76,12 @@
                 <div class="modal-dialog">
                   <div class="modal-content">
                     <div class="modal-header">
-                      <h1 class="modal-title fs-5" id="adjustCarModalLabel" style="color: black;">Vilken bil vill du justera?</h1>
+                      <h1 class="modal-title fs-5" id="adjustCarModalLabelFirst" style="color: black;">Vilken bil vill du justera?</h1>
                       
                     </div>
                     <div class="modal-body" style="color: black;">
-                      <label for="car-color" class="form-label">REG-nummer</label>
-                      <input type="choose-car" class="form-control" id="choose-car" placeholder="ZEG-123">
+                      <label for="car-reg" class="form-label">REG-nummer</label>
+                      <input type="text" class="form-control" id="choose-car" placeholder="ZEG-123">
                     </div>
                     <div class="modal-footer">
 
@@ -96,17 +96,50 @@
                 <div class="modal-dialog">
                   <div class="modal-content">
                     <div class="modal-header">
-                      <h1 class="modal-title fs-5" id="adjustCarModalLabel" style="color: black;">Gör justering</h1>
+                      <h1 class="modal-title fs-5" id="adjustCarModalLabelSecond" style="color: black;">Gör justering</h1>
                       
                     </div>
                     <div class="modal-body" style="color: black;">
-                      <label for="car-color" class="form-label">REG-nummeasdasdr</label>
-                      <input type="choose-car" class="form-control" id="choose-car" placeholder="ZEG-123">
+
+                      <label for="change-car-reg" class="form-label"> Nytt REG-nummer</label>
+                      <input type="text" class="form-control" id="change-car-reg" placeholder="ZEG-123">
+
+                      <label for="change-car-model" class="form-label"> Ny Model</label>
+                      <input type="text" class="form-control" id="change-car-model" placeholder="Q8 Sportback e-tron">
+
+                      <label for="change-car-miles" class="form-label"> Ändra antal mil</label>
+                      <input type="number" class="form-control" id="change-car-miles" placeholder="500">
+
+                      <label for="change-car-brand" class="form-label"> Nytt Märke</label>
+                      <input type="text" class="form-control" id="change-car-brand" placeholder="Audi">
+
+                      <label for="change-car-year" class="form-label"> Ändra ålder</label>
+                      <input type="number" class="form-control" id="change-car-year" placeholder="2023">
+
+                      <label for="change-car-color" class="form-label"> Ny Färg</label>
+                      <input type="text" class="form-control" id="change-car-color" placeholder="grå">
                     </div>
                     <div class="modal-footer">
 
-                      <button type="button" class="btn btn-success" data-bs-dismiss="modal">Justera</button>
+                      <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#adjustCarModalThird">Justera</button>
 
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="modal fade" id="adjustCarModalThird" tabindex="-1" aria-labelledby="adjustCarModalLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h1 class="modal-title fs-5" id="addCarModalLabel" style="color: black;">Justering klar</h1>
+                      
+                    </div>
+                    <div class="modal-body" style="color: black;">
+                      Nu är bilen uppdaterad i databasen!
+                    </div>
+                    <div class="modal-footer">
+                      <button type="button" class="btn btn-success" data-bs-dismiss="modal">OK</button>
                     </div>
                   </div>
                 </div>
