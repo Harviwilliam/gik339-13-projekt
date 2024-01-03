@@ -53,14 +53,14 @@ server.get("/api/cars/:id", (req, res) => {
 //API Endpoint: Add new car
 
 server.post("/api/cars", (req, res) => {
-    const { make, model, licensplate, color, year, mileage } = req.body;
-    if (!make || !model || !licensplate || !color || !year || !mileage ) {
+    const { make, model, licenseplate, color, year, mileage } = req.body;
+    if (!make || !model || !licenseplate || !color || !year || !mileage ) {
         res.status(400).json({error: "Invalid request body" });
         return;
     }
 
-    const insertData = db.prepare("INSERT INTO cars (make, mode, licensplate, color, year, mileage VALUES (?, ?, ?, ?, ?, ?");
-    insertData.run(make, model, licensplate, color, year, mileage);
+    const insertData = db.prepare("INSERT INTO cars (make, mode, licenseplate, color, year, mileage VALUES (?, ?, ?, ?, ?, ?");
+    insertData.run(make, model, licenseplate, color, year, mileage);
     insertData.finalize();
 
 
@@ -71,13 +71,13 @@ server.post("/api/cars", (req, res) => {
 
 server.put("/api/cars/:id", (req, res) => {
     const carId = req.params.id;
-    const { make, model, licensplate, color, year, mileage } = req.body;
-    if (!make || !model || !licensplate || !color || !year || !mileage ) {
+    const { make, model, licenseplate, color, year, mileage } = req.body;
+    if (!make || !model || !licenseplate || !color || !year || !mileage ) {
         res.status(400).json({error: "Invalid request body" });
         return;
     }
 
-    db.run("UPDATE cars SET make = ?, model = ?, licensplate = ?, color = ? , year = ?, mileage = ? WHERE id = ?", [make, model, licensplate, color, year, mileage, carId], (err) => {
+    db.run("UPDATE cars SET make = ?, model = ?, licenseplate = ?, color = ? , year = ?, mileage = ? WHERE id = ?", [make, model, licenseplate, color, year, mileage, carId], (err) => {
         if (err) {
             res.status(500).json({ error: err.message});
             return;
