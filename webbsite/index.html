@@ -40,7 +40,25 @@
                 <input type="car-color" class="form-control" id="car-color" placeholder="grå">
             </div>
             <div class="col-12">
-                <button type="button" class="btn btn-primary">Lägg till</button>
+                <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#addCarModal">Lägg till</button>
+                
+                <div class="modal fade" id="addCarModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                  <div class="modal-dialog">
+                    <div class="modal-content">
+                      <div class="modal-header">
+                        <h1 class="modal-title fs-5" id="exampleModalLabel" style="color: black;">Lägg till bil</h1>
+                        
+                      </div>
+                      <div class="modal-body" style="color: black;">
+                        Nu är bilen tillagd i databasen!
+                      </div>
+                      <div class="modal-footer">
+                        <button type="button" class="btn btn-success" data-bs-dismiss="modal">OK</button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
               </div>
     </div>
 
@@ -73,10 +91,10 @@
     <script>
       const myModal = document.getElementById('myModal')
       const myInput = document.getElementById('myInput')
-
+      
       myModal.addEventListener('shown.bs.modal', () => {
         myInput.focus()
       })
-    </script> 
+    </script>
 </body>
 </html>
