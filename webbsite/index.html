@@ -42,11 +42,11 @@
             <div class="col-12">
                 <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#addCarModal">Lägg till</button>
                 
-                <div class="modal fade" id="addCarModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal fade" id="addCarModal" tabindex="-1" aria-labelledby="addCarModalLabel" aria-hidden="true">
                   <div class="modal-dialog">
                     <div class="modal-content">
                       <div class="modal-header">
-                        <h1 class="modal-title fs-5" id="exampleModalLabel" style="color: black;">Lägg till bil</h1>
+                        <h1 class="modal-title fs-5" id="addCarModalLabel" style="color: black;">Lägg till bil</h1>
                         
                       </div>
                       <div class="modal-body" style="color: black;">
@@ -69,7 +69,31 @@
              <div class="card-body text-bg-light p-3">
               <h5 class="card-title">Ändra information</h5>
                <p class="card-text">Klicka på knappen för att ändra informationen om en bil.</p>
-               <a href="#" class="btn btn-primary">Justera resurs</a>
+
+               <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#adjustCarModalFirst">Justera resurs</button>
+
+               <div class="modal fade" id="adjustCarModalFirst" tabindex="-1" aria-labelledby="adjustCarModalLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h1 class="modal-title fs-5" id="adjustCarModalLabel" style="color: black;">Vilken bil vill du justera?</h1>
+                      
+                    </div>
+                    <div class="modal-body" style="color: black;">
+                      <label for="car-color" class="form-label">REG-nummer</label>
+                      <input type="choose-car" class="form-control" id="choose-car" placeholder="ZEG-123">
+                    </div>
+                    <div class="modal-footer">
+
+                      <button type="button" class="btn btn-success" data-bs-dismiss="modal">Fortsätt</button>
+
+
+
+                    </div>
+                  </div>
+                </div>
+              </div>
+
              </div>
            </div>
           </div>
