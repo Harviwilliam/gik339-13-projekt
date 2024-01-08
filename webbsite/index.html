@@ -155,7 +155,43 @@
             <div class="card-body text-bg-light p-3">
               <h5 class="card-title">Ta bort bilar från databasen</h5>
                 <p class="card-text">Klicka på knappen för att ta bort en bil från databasen</p>
-                <a href="#" class="btn btn-primary">Ta bort bil</a>
+                <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#removeCarModalFirst">Ta bort bil</button>
+
+                <div class="modal fade" id="removeCarModalFirst" tabindex="-1" aria-labelledby="removeCarModalLabel" aria-hidden="true">
+                  <div class="modal-dialog">
+                    <div class="modal-content">
+                      <div class="modal-header">
+                        <h1 class="modal-title fs-5" id="removeCarModalLabel" style="color:black;">Vilken bil vill du ta bort?</h1>
+
+                      </div>
+                      <div class="modal-body" style="color:black;">
+                        <label for="remove-car-reg" class="form-label">REG-nummer</label>
+                        <input type="text" class="form-control" id="remove-car-reg" placeholder="ZEG-123">
+                      </div>
+                      <div class="modal-footer">
+                        <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#removeCarModalSecond">Ta bort</button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="modal fade" id="removeCarModalSecond" tabindex="-1" aria-labelledby="removeCarModalLabel" aria-hidden="true">
+                  <div class="modal-dialog">
+                    <div class="modal-content">
+                      <div class="modal-header">
+                        <h1 class="modal-title fs-5" id="removeCarModalLabel" style="color:black;">Nu är bilen borttagen</h1>
+
+                      </div>
+                      <div class="modal-body" style="color:black;">
+                        Klicka på OK för att gå vidare.
+                      </div>
+                      <div class="modal-footer">
+                        <button type="button" class="btn btn-success" data-bs-dismiss="modal">OK</button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
             </div>
            </div>
           </div>
