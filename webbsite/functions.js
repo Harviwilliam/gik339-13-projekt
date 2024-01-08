@@ -22,8 +22,19 @@ document.addEventListener('DOMContentLoaded', function() {
         input.addEventListener('input', updateButtonStatus);
     });
     updateButtonStatus();
-});
 
+
+    //adding a confirmation modal before submitting
+    addButton.addEventListener('click', function(event) {
+        event.preventDefault(); // Prevent the default form submission behavior
+
+        if (areAllInputsFilled()) {
+            // Show confirmation modal
+            const confirmationModal = new bootstrap.Modal(document.getElementById('confirmationModal'));
+            confirmationModal.show();
+        }
+    });
+});
 //adding a car into the database
 
 function addCar() {
@@ -33,6 +44,8 @@ function addCar() {
     const color = document.getElementById("car-color").value
     const year = document.getElementById("car-model-year").value
     const mileage = document.getElementById("miles-traveled").value
+
+    console.log("Car details:", { make, model, licenseplate, color, year, mileage }); // Add this line for debugging
 
     fetch('http://localhost:3000/api/cars', {
         method: 'POST',
@@ -50,9 +63,10 @@ function addCar() {
     })
     .then(response => {
         if (!response.ok) {
-            throw new Error(' HTTP error! Status: ${response.status}');
+            throw new Error(`HTTP error! Status: ${response.status}`);
         }
         console.log('Car added successfully');
     })
     .catch(error => console.error('Error', error));
 };
+
