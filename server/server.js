@@ -35,20 +35,28 @@ server.get("/api/cars", (req, res) => {
 
 //API Endpoint: Get a specific car by ID
 
-server.get("/api/cars/:id", (req, res) => {
-    const carId = req.params.id;
-    db.get("SELECT * FROM cars WHERE id = ?", [carId], (err, row) => {
+server.get("/api/cars/:registration", (req, res) => {
+    const carRegistration = req.params.registration;
+    console.log("Fetching car by registration:", carRegistration);
+
+    db.get("SELECT * FROM cars WHERE licenseplate = ?", [carRegistration], (err, row) => {
         if (err) {
-            res.status(500).json({ error: err.message});
+            console.error("Error fetching car by registration:", err.message);
+            res.status(500).json({ error: err.message });
             return;
         }
-        if(!row) {
-            res.status(404).json({error: "Car no found"});
+
+        if (!row) {
+            console.log("Car not found for registration:", carRegistration);
+            res.status(404).json({ error: "Car not found" });
             return;
         }
+
+        console.log("Car found:", row); // Add this line for additional logging
         res.json(row);
     });
 });
+
 
 //API Endpoint: Add new car
 

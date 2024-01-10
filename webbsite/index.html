@@ -8,19 +8,24 @@
 </head>
 
 <body>
-    <div id="header" class="text-center container-fluid pb-5 pt-5 shadow">
-        <h3>Transportstyrelsen</h3>
+  <div id="header" class="text-center container-fluid pb-5 pt-5 shadow">
+    <div class="row">
+      <button type="button" onclick="getCars()" class="btn btn-info col">Show all cars</button>
+      <h3 class="col-sm-8">Transport Agency</h3>
+      <input type="text" class="form-control col" id="showInfoForCar" placeholder="Registration here">
+      <button type="button" onclick="showCarByRegistration()" class="btn btn-info col-sm-1">Show car</button>
     </div>
+  </div>
 
     <div id="form" class="col-sm-12 text-bg-success p-3 my-5 shadow">
         <form class="row g-3">
-            <header class="text-center"><h5>Lägg till bil</h5></header>
-            <div class="col-lg-6">
-              <label for="licenseplate" class="form-label">REG-nummer</label>
+          <header class="text-center"><h5>Add car</h5></header>
+          <div class="col-lg-6">
+              <label for="licenseplate" class="form-label">Registration</label>
               <input type="text" class="form-control" id="licenseplate" placeholder="ZEG-123" required>
-            </div>
-            <div class="col-lg-6">
-              <label for="car-brand" class="form-label">Märke</label>
+          </div>
+          <div class="col-lg-6">
+              <label for="car-brand" class="form-label">Brand</label>
               <input type="text" class="form-control" id="car-brand" placeholder="Audi" required>
             </div>
             <div class="col-lg-6">
@@ -28,33 +33,33 @@
                 <input type="text" class="form-control" id="car-model" placeholder="Q8 Sportback e-tron" required>
             </div>
             <div class="col-lg-6">
-                <label for="car-model-year" class="form-label">År</label>
+                <label for="car-model-year" class="form-label">Year</label>
                 <input type="number" class="form-control" id="car-model-year" placeholder="2023" required>
             </div>
             <div class="col-lg-6">
-                <label for="miles-traveled" class="form-label">Antal mil</label>
+                <label for="miles-traveled" class="form-label">Mileage</label>
                 <input type="number" class="form-control" id="miles-traveled" placeholder="500" required>
             </div>
             <div class="col-lg-6">
-                <label for="car-color" class="form-label">Färg</label>
-                <input type="text" class="form-control" id="car-color" placeholder="grå" required>
+                <label for="car-color" class="form-label">Color</label>
+                <input type="text" class="form-control" id="car-color" placeholder="black" required>
             </div>
             <div class="col-12">
-              <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#confirmationModal">Lägg till</button>
-                
+              <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#confirmationModal">Add</button>
+            
           
 
               </div>
-              <!--adding a confirmation modal-->
+         <!--adding a confirmation modal-->
               <div class="modal fade" id="confirmationModal" tabindex="-1" aria-labelledby="confirmationModalLabel" aria-hidden="true">
                 <div class="modal-dialog">
                     <div class="modal-content">
                         <div class="modal-header">
-                            <h5 class="modal-title" id="confirmationModalLabel" style="color:black;">Konfirmera</h5>
+                            <h5 class="modal-title" id="confirmationModalLabel" style="color:black;">Confirm</h5>
                             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                         </div>
                         <div class="modal-body" style="color: black;">
-                            Är du säker att du vill lägga till bilen?
+                            Are you sure you want to add the car?
                         </div>
                         <div class="modal-footer">
                             <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
@@ -63,32 +68,33 @@
                     </div>
                 </div>
             </div>
-    </div>
-
+        </form>  
+      </div>
+   
     <div class="row">
       <div class="col-sm-12 col-xxl-6 mb-5">
         <div class="card shadow-sm">
-             <h5 class="card-header text-bg-info p-3">Justera</h5>
+             <h5 class="card-header text-bg-info p-3">Adjust</h5>
              <div class="card-body text-bg-light p-3">
-              <h5 class="card-title">Ändra information</h5>
-               <p class="card-text">Klicka på knappen för att ändra informationen om en bil.</p>
+              <h5 class="card-title">Change information</h5>
+               <p class="card-text">Press the button to change information on a car</p>
 
-               <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#adjustCarModalFirst">Justera resurs</button>
+               <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#adjustCarModalFirst">Adjust car</button>
 
                <div class="modal fade" id="adjustCarModalFirst" tabindex="-1" aria-labelledby="adjustCarModalLabel" aria-hidden="true">
                 <div class="modal-dialog">
                   <div class="modal-content">
                     <div class="modal-header">
-                      <h1 class="modal-title fs-5" id="adjustCarModalLabelFirst" style="color: black;">Vilken bil vill du justera?</h1>
+                      <h1 class="modal-title fs-5" id="adjustCarModalLabelFirst" style="color: black;">What car do you want to adjust?</h1>
                       
                     </div>
                     <div class="modal-body" style="color: black;">
-                      <label for="car-change-reg" class="form-label">REG-nummer</label>
-                      <input type="text" class="form-control" id="car-change-reg" placeholder="ZEG-123">
+                      <label for="car-adj-reg" class="form-label">Registration</label>
+                      <input type="text" class="form-control" id="car-adj-reg" placeholder="ZEG-123">
                     </div>
                     <div class="modal-footer">
 
-                      <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#adjustCarModalSecond">Fortsätt</button>
+                      <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#adjustCarModalSecond" onclick="retrieveRegValue()">Continue</button>
 
                     </div>
                   </div>
@@ -99,32 +105,32 @@
                 <div class="modal-dialog">
                   <div class="modal-content">
                     <div class="modal-header">
-                      <h1 class="modal-title fs-5" id="adjustCarModalLabelSecond" style="color: black;">Gör justering</h1>
+                      <h1 class="modal-title fs-5" id="adjustCarModalLabelSecond" style="color: black;">Complete adjustment</h1>
                       
                     </div>
                     <div class="modal-body" style="color: black;">
 
-                      <label for="change-car-reg" class="form-label"> Nytt REG-nummer</label>
+                      <label for="change-car-reg" class="form-label"> New Registration</label>
                       <input type="text" class="form-control" id="change-car-reg" placeholder="ZEG-123">
 
-                      <label for="change-car-model" class="form-label"> Ny Model</label>
+                      <label for="change-car-model" class="form-label"> New Model</label>
                       <input type="text" class="form-control" id="change-car-model" placeholder="Q8 Sportback e-tron">
 
-                      <label for="change-car-miles" class="form-label"> Ändra antal mil</label>
+                      <label for="change-car-miles" class="form-label"> Change Mileage</label>
                       <input type="number" class="form-control" id="change-car-miles" placeholder="500">
 
-                      <label for="change-car-brand" class="form-label"> Nytt Märke</label>
+                      <label for="change-car-brand" class="form-label"> New Brand</label>
                       <input type="text" class="form-control" id="change-car-brand" placeholder="Audi">
 
-                      <label for="change-car-year" class="form-label"> Ändra ålder</label>
+                      <label for="change-car-year" class="form-label"> Change Year</label>
                       <input type="number" class="form-control" id="change-car-year" placeholder="2023">
 
-                      <label for="change-car-color" class="form-label"> Ny Färg</label>
-                      <input type="text" class="form-control" id="change-car-color" placeholder="grå">
+                      <label for="change-car-color" class="form-label"> New Color</label>
+                      <input type="text" class="form-control" id="change-car-color" placeholder="black">
                     </div>
                     <div class="modal-footer">
 
-                      <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#adjustCarModalThird">Justera</button>
+                      <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#adjustCarModalThird" onclick="adjCar()">Adjust</button>
 
                     </div>
                   </div>
@@ -135,11 +141,11 @@
                 <div class="modal-dialog">
                   <div class="modal-content">
                     <div class="modal-header">
-                      <h1 class="modal-title fs-5" id="addCarModalLabel" style="color: black;">Justering klar</h1>
+                      <h1 class="modal-title fs-5" id="addCarModalLabel" style="color: black;">Adjustment finished</h1>
                       
                     </div>
                     <div class="modal-body" style="color: black;">
-                      Nu är bilen uppdaterad i databasen!
+                      Now your car is updated!
                     </div>
                     <div class="modal-footer">
                       <button type="button" class="btn btn-success" data-bs-dismiss="modal">OK</button>
@@ -154,25 +160,25 @@
 
     <div class="col-sm-12 col-xxl-6 mb-5">
         <div class="card shadow-sm">
-            <h5 class="card-header text-bg-danger p-3">Ta bort</h5>
+            <h5 class="card-header text-bg-danger p-3">Remove</h5>
             <div class="card-body text-bg-light p-3">
-              <h5 class="card-title">Ta bort bilar från databasen</h5>
-                <p class="card-text">Klicka på knappen för att ta bort en bil från databasen</p>
-                <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#removeCarModalFirst">Ta bort bil</button>
+              <h5 class="card-title">Remove a car from the database</h5>
+                <p class="card-text">Press the remove button to remove a car</p>
+                <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#removeCarModalFirst">Remove</button>
 
                 <div class="modal fade" id="removeCarModalFirst" tabindex="-1" aria-labelledby="removeCarModalLabel" aria-hidden="true">
                   <div class="modal-dialog">
                     <div class="modal-content">
                       <div class="modal-header">
-                        <h1 class="modal-title fs-5" id="removeCarModalLabel" style="color:black;">Vilken bil vill du ta bort?</h1>
+                        <h1 class="modal-title fs-5" id="removeCarModalLabelFirst" style="color:black;">What car do you want to remove?</h1>
 
                       </div>
                       <div class="modal-body" style="color:black;">
-                        <label for="remove-car-reg" class="form-label">REG-nummer</label>
+                        <label for="remove-car-reg" class="form-label">Registration</label>
                         <input type="text" class="form-control" id="remove-car-reg" placeholder="ZEG-123">
                       </div>
                       <div class="modal-footer">
-                        <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#removeCarModalSecond">Ta bort</button>
+                        <button type="button" class="btn btn-success" id="car-remove-success" data-bs-toggle="modal" data-bs-target="#removeCarModalSecond" onclick="deleteCar(event)">Remove</button>
                       </div>
                     </div>
                   </div>
@@ -182,11 +188,11 @@
                   <div class="modal-dialog">
                     <div class="modal-content">
                       <div class="modal-header">
-                        <h1 class="modal-title fs-5" id="removeCarModalLabel" style="color:black;">Nu är bilen borttagen</h1>
+                        <h1 class="modal-title fs-5" id="removeCarModalLabelSecond" style="color:black;">Now the car is removed</h1>
 
                       </div>
                       <div class="modal-body" style="color:black;">
-                        Klicka på OK för att gå vidare.
+                        Press OK to continue
                       </div>
                       <div class="modal-footer">
                         <button type="button" class="btn btn-success" data-bs-dismiss="modal">OK</button>
@@ -203,5 +209,5 @@
 
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
         <script src="functions.js"></script>
-    </body>
-    </html>
+  </body>
+</html>
