@@ -52,7 +52,7 @@ server.get("/api/cars/:registration", (req, res) => {
             return;
         }
 
-        console.log("Car found:", row); // Add this line for additional logging
+        console.log("Car found:", row); 
         res.json(row);
     });
 });
